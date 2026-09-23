@@ -59,6 +59,15 @@ export const metadata = {
     locale: "en_US",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/images/logo.png" },
+      { url: "/favicon.ico" },
+      { url: "/icon.png" }
+    ],
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   twitter: {
     card: "summary_large_image",
     title: "OREN Kasauli — Luxury Hospitality Portfolio",
@@ -70,9 +79,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${italiana.variable} ${playfair.variable} ${manrope.variable}`}>
+      <head>
+        <link rel="icon" href="/images/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
+      </head>
       <body className="font-sans bg-[#214748] text-[#fcfaf6] antialiased selection:bg-brand-gold selection:text-brand-bg min-h-screen">
         {children}
       </body>
     </html>
   );
 }
+
